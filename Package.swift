@@ -16,8 +16,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .binaryTarget(
             name: "Didomi",
-            url: "https://sdk.didomi.io/ios/didomi-ios-sdk-1.73.0-xcframework.zip",
-            checksum: "a52b39749c463d1dac778ace06d279f3a6b2aedc359d8134c0e144f097085128"
+            url: "https://sdk.didomi.io/ios/didomi-ios-sdk-1.74.0-xcframework.zip",
+            checksum: "5569440d0180f0e98c14761cf40e2a21251e37a0be62751712c92e652baf605a"
         )
     ]
 )
