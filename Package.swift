@@ -13,8 +13,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "Didomi",
-            url: "https://sdk.didomi.io/ios/didomi-ios-sdk-1.93.0-xcframework.zip",
-            checksum: "d2f1057589cb119e5255011adaef27f7c3e49528529ba520a58dd99df04f9581"
+            url: "https://sdk.didomi.io/ios/didomi-ios-sdk-1.93.1-xcframework.zip",
+            checksum: "b46451a37887d386b34c5d956d7ec39e01685c11c14ed946178159b97952eaa5"
         )
     ]
 )
