@@ -1,0 +1,42 @@
+name: Sync with Upstream
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Forked Repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Add Upstream Repository
+        run: |
+          git remote add upstream git@github.com:didomi/didomi-ios-sdk-spm.git
+          git fetch upstream main
+
+      - name: Create Branch for Sync
+        run: |
+          git checkout -b sync-upstream-main
+          git merge upstream/main --no-edit || echo "No changes to merge"
+
+      - name: Push Changes
+        run: |
+          git push origin sync-upstream-main --force
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Syncing with upstream repository"
+          title: "Sync changes from upstream/main"
+          body: "This PR contains the latest updates from the upstream repository."
+          base: main
+          branch: sync-upstream-main
+          labels: "auto-sync"
+          assignees: "niklas-tag24"
