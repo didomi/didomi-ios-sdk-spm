@@ -17,7 +17,7 @@ jobs:
 
       - name: Add Upstream Repository
         run: |
-          git remote add upstream git@github.com:didomi/didomi-ios-sdk-spm.git
+          git remote add upstream https://github.com/didomi/didomi-ios-sdk-spm.git
           git fetch upstream main
 
       - name: Create Branch for Sync
