@@ -25,7 +25,6 @@ jobs:
           git config --local user.email "webmaster@tag24.de"
           git config --local user.name "tag24-bot"
           git checkout -b sync-upstream-main
-          git checkout -b sync-upstream-main
           git merge upstream/main --allow-unrelated-histories --no-edit || echo "No changes to merge"
 
       - name: Push Changes
