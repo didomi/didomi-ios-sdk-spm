@@ -23,7 +23,7 @@ jobs:
       - name: Create Branch for Sync
         run: |
           git checkout -b sync-upstream-main
-          git merge upstream/main --no-edit || echo "No changes to merge"
+          git merge upstream/main --allow-unrelated-histories --no-edit || echo "No changes to merge"
 
       - name: Push Changes
         run: |
